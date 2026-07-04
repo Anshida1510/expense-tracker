@@ -1,41 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Expense Tracker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-  <h1>💰 Expense Tracker</h1>
+    <div class="container">
 
-  <form id="expense-form">
-    <input type="text" id="title" placeholder="Title" required>
-    
-    <input type="number" id="amount" placeholder="Amount" required>
+        <h1>💰 Expense Tracker</h1>
 
-    <input type="date" id="date" required>
+        <!-- Expense Form -->
+        <form id="expense-form">
 
-    <select id="category">
-      <option value="Food">Food</option>
-      <option value="Travel">Travel</option>
-      <option value="Shopping">Shopping</option>
-      <option value="Bills">Bills</option>
-      <option value="Other">Other</option>
-    </select>
+            <input
+                type="text"
+                id="title"
+                placeholder="Expense Title"
+                required
+            >
 
-    <button type="submit">Add Expense</button>
-  </form>
+            <input
+                type="number"
+                id="amount"
+                placeholder="Amount"
+                required
+            >
 
-  <h2>Total: ₹<span id="total">0</span></h2>
+            <input
+                type="date"
+                id="date"
+                required
+            >
 
-  <canvas id="chart" width="400" height="200"></canvas>
+            <select id="category">
 
-  <ul id="expense-list"></ul>
-</div>
+                <option value="Food">🍔 Food</option>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
+                <option value="Travel">✈️ Travel</option>
+
+                <option value="Shopping">🛍 Shopping</option>
+
+                <option value="Bills">📄 Bills</option>
+
+                <option value="Other">📦 Other</option>
+
+            </select>
+
+            <button type="submit">
+                Add Expense
+            </button>
+
+        </form>
+
+        <hr>
+
+        <!-- Search -->
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search by title or category..."
+        >
+
+        <br><br>
+
+        <!-- Category Filter -->
+
+        <select id="filterCategory">
+
+            <option value="All">📂 All Categories</option>
+
+            <option value="Food">🍔 Food</option>
+
+            <option value="Travel">✈️ Travel</option>
+
+            <option value="Shopping">🛍 Shopping</option>
+
+            <option value="Bills">📄 Bills</option>
+
+            <option value="Other">📦 Other</option>
+
+        </select>
+
+        <br><br>
+
+        <!-- Sort -->
+
+        <select id="sortExpenses">
+
+            <option value="newest">🕒 Newest First</option>
+
+            <option value="oldest">📅 Oldest First</option>
+
+            <option value="highest">💰 Highest Amount</option>
+
+            <option value="lowest">💸 Lowest Amount</option>
+
+        </select>
+
+        <hr>
+
+        <!-- Summary Cards -->
+
+        <div class="summary">
+
+            <div class="card">
+
+                <h3>Total</h3>
+
+                <p>₹<span id="total">0</span></p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Food</h3>
+
+                <p>₹<span id="foodTotal">0</span></p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Travel</h3>
+
+                <p>₹<span id="travelTotal">0</span></p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Shopping</h3>
+
+                <p>₹<span id="shoppingTotal">0</span></p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Bills</h3>
+
+                <p>₹<span id="billsTotal">0</span></p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Other</h3>
+
+                <p>₹<span id="otherTotal">0</span></p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Pie Chart -->
+
+        <canvas id="chart"></canvas>
+
+        <hr>
+
+        <!-- Expense List -->
+
+        <ul id="expense-list"></ul>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
